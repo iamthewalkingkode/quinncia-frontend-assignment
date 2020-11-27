@@ -37,7 +37,7 @@ export const create = async (req, res) => {
   await new Promise((result) => {
     fs.rename(
       req.file.path,
-      path.resolve(`../storage/photo-${newPhoto._id}.png`),
+      path.resolve(`storage/photo-${newPhoto._id}.png`),
       result,
     );
   });
@@ -120,7 +120,7 @@ export const remove = async (req, res) => {
 
   // Delete photo from Storage
   try {
-    fs.unlinkSync(path.resolve(`../storage/photo-${_id}.png`));
+    fs.unlinkSync(path.resolve(`storage/photo-${_id}.png`));
   } catch (err) {
     console.error(err);
   }
@@ -156,7 +156,7 @@ export const getOne = async (req, res) => {
 };
 
 export const getContent = async (req, res) => {
-  res.sendFile(path.resolve(`../storage/photo-${req.params.id}.png`));
+  res.sendFile(path.resolve(`storage/photo-${req.params.id}.png`));
 };
 
 export const getMany = async (req, res) => {

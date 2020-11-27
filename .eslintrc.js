@@ -1,5 +1,5 @@
 module.exports = {
-  "parser": 'babel-eslint',
+  parser: 'babel-eslint',
   env: {
     browser: true,
     es6: true,
@@ -23,5 +23,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    'semi': 2
   },
 };
